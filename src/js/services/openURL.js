@@ -4,8 +4,8 @@ angular.module('copayApp.services').factory('openURLService', function($rootScop
   var root = {};
 
   root.registeredUriHandlers = [{
-    name: 'Bitcoin BIP21 URL',
-    startsWith: 'bitcoin:',
+    name: 'DASH BIP21 URL',
+    startsWith: 'dash:',
     transitionTo: 'uripayment',
   }, {
     name: 'Glidera Authentication Callback',
@@ -122,7 +122,7 @@ angular.module('copayApp.services').factory('openURLService', function($rootScop
 
       if (navigator.registerProtocolHandler) {
         $log.debug('Registering Browser handlers base:' + base);
-        navigator.registerProtocolHandler('dash', url, 'Copay DASH Handler');
+        navigator.registerProtocolHandler('web+dash', url, 'Copay DASH Handler');
         navigator.registerProtocolHandler('web+copay', url, 'Copay Wallet Handler');
       }
     }
